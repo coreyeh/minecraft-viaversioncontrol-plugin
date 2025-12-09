@@ -1,0 +1,9 @@
+{
+  "id": "viaversioncontrol",
+  "name": "ViaVersionControl",
+  "version": "${version}",
+  "description": "Per-backend server version control and redirect rules for Velocity.",
+  "authors": [ "Kai" ],
+  "main": "me.kai.viaversioncontrol.ViaVersionControl",
+  "dependencies": {}
+}

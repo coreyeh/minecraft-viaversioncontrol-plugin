@@ -1,0 +1,24 @@
+# ViaVersionControl config
+# You may specify either semantic "min_version" like "1.13" or
+# a protocol number under "min_protocol" if you prefer numeric checks.
+# If both are present, min_protocol takes precedence.
+
+servers:
+  hub:
+    allow_all: true
+  survival:
+    allow_all: true
+  Capture-The-Flag:
+    allow_all: false
+    # require at least Minecraft 1.13
+    min_version: "1.13"
+    # alternatively, set numeric protocol (uncomment and set if you want that)
+    # min_protocol: 404
+
+behavior:
+  on_denied: redirect
+  redirect_target: hub
+
+messages:
+  redirect: "You must use Minecraft {min_version}+ to join {server}. Redirecting to {target}..."
+  denied: "This server requires Minecraft {min_version}+ to join."
