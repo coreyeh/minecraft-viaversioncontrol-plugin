@@ -1,0 +1,11 @@
+{
+  "id": "viaversioncontrol",
+  "name": "ViaVersionControl",
+  "version": "${version}",
+  "description": "Per-backend server version control and redirect rules for Velocity.",
+  "authors": [ "azoaze" ],
+  "main": "me.azoaze.viaversioncontrol.ViaVersionControl",
+  "dependencies": [
+    { "id": "viaversion", "optional": false }
+  ]
+}

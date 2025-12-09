@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '9.2.2'
+}
+
+group = 'me.kai'
+version = '1.1.0'
+
+repositories {
+  mavenCentral()
+  maven { 
+    name = 'papermc' 
+    url = 'https://repo.papermc.io/repository/maven-public/'
+  }
+  maven { 
+    name = 'viaversionEverything'
+    url = 'https://repo.viaversion.com/everything' 
+  }
+}
+
+dependencies {
+  compileOnly 'com.velocitypowered:velocity-api:3.4.0-SNAPSHOT'
+  compileOnly 'com.viaversion:viaversion-api:5.5.2-SNAPSHOT'
+}
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+}
+
+tasks.shadowJar {
+  archiveBaseName.set("ViaVersionControl")
+  archiveVersion.set(version)
+  mergeServiceFiles()
+}
+
+tasks.build {
+  dependsOn tasks.shadowJar
+}
